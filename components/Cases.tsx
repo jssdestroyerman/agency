@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const productArray = [
     {
@@ -25,14 +26,24 @@ function Cases() {
     return (
         <>
             {productArray.map((product) => (
-                <div key={product.id} className="min-h-full w-full relative">
+                <Link
+                    href={""}
+                    key={product.id}
+                    className="min-h-full w-full relative bg-black"
+                >
                     <Image
                         src={`/${product.image}`}
-                        className="object-cover"
+                        className="object-cover opacity-75 hover:opacity-50 transition duration-500"
                         fill
                         alt={product.title}
                     />
-                </div>
+                    <div className="absolute bottom-20 left-6 z-10">
+                        <h3 className="text-gray-300 text-2xl">
+                            {product.title}
+                        </h3>
+                        <p className="text-white text-[34px]">{product.text}</p>
+                    </div>
+                </Link>
             ))}
         </>
     );
