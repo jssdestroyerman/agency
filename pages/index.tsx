@@ -40,7 +40,7 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                     >
-                        <div className="overflow-hidden h-16">
+                        <div className="overflow-hidden md:h-16">
                             <motion.span
                                 variants={item}
                                 className="inline-block"
