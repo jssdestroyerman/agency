@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Link from "next/link";
 import Cases from "@/components/Cases";
 import Loader from "@/components/Loader";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 

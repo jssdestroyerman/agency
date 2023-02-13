@@ -2,59 +2,67 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const container = {
-    hidden: { transition: { delay: 4 } },
-    show: { transition: { staggerChildren: 0.3 } },
+    show: { transition: { staggerChildren: 0.3, delayChildren: 2 } },
 };
 
 const item = {
     show: { y: "100%", transition: { duration: 1 } },
 };
 
+const container2 = {
+    show: { transition: { staggerChildren: 1, delayChildren: 3 } },
+};
+
 const item2 = {
-    show: { x: "100%", opacity: 0, transition: { duration: 1 } },
+    show: { width: 0, transition: { duration: 1 } },
 };
 
 function Loader() {
     const [animation, setAnimation] = useState(true);
 
     return (
-        <motion.div
-            className={`absolute flex flex-col ${!animation && "hidden"}`}
-            variants={container}
-            initial="hidden"
-            animate="show"
-            onAnimationComplete={() => setAnimation(false)}
-        >
-            <div className="h-[50vh] flex ">
+        <div className={`absolute flex flex-col ${!animation && "hidden"}`}>
+            <motion.div
+                className="h-[50vh] flex "
+                variants={container}
+                initial="hidden"
+                animate="show"
+            >
                 <motion.div
                     className="bg-black h-full w-[100vw] md:w-[33.333vw]"
                     variants={item}
                 />
                 <motion.div
-                    className="bg-black h-full w-[33.333vw]"
+                    className="md:bg-black md:h-full md:w-[33.333vw]"
                     variants={item}
                 />
                 <motion.div
-                    className="bg-black h-full w-[33.333vw]"
+                    className="md:bg-black md:h-full md:w-[33.333vw]"
                     variants={item}
                 />
-            </div>
+            </motion.div>
 
-            <div className="h-[50vh] flex z-20 overflow-hidden">
+            <motion.div
+                className="h-[50vh] flex z-20 flex-row-reverse"
+                variants={container2}
+                initial="hidden"
+                animate="show"
+                onAnimationComplete={() => setAnimation(false)}
+            >
                 <motion.div
-                    className="bg-black h-full w-[33.333vw] overflow-hidden"
+                    className="bg-black h-full w-[100vw]  md:w-[33.333vw] "
                     variants={item2}
                 />
                 <motion.div
-                    className="bg-black h-full w-[33.333vw] overflow-hidden"
+                    className="md:bg-black md:h-full md:w-[33.333vw]"
                     variants={item2}
                 />
                 <motion.div
-                    className="bg-black h-full w-[33.333vw] overflow-hidden"
+                    className="md:bg-black md:h-full md:w-[33.333vw]"
                     variants={item2}
                 />
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
     );
 }
 
