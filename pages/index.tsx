@@ -1,14 +1,18 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Link from "next/link";
 import Cases from "@/components/Cases";
 import Loader from "@/components/Loader";
 import { motion } from "framer-motion";
 
-const inter = Inter({ subsets: ["latin"] });
+const container = {
+    show: { transition: { staggerChildren: 0.3 } },
+};
+
+const item = {
+    hidden: { y: 100 },
+    show: { y: 0, transition: { duration: 0.7 } },
+};
 
 export default function Home() {
     return (
@@ -30,10 +34,29 @@ export default function Home() {
                 <Header />
 
                 <section className="bg-white w-[90%] mx-auto 2xl:w-[1280px]">
-                    <h2 className="text-white mix-blend-difference text-[30px] lg:text-[50px]">
-                        <div>Creating unique brands is</div>
-                        <div>what we do.</div>
-                    </h2>
+                    <motion.h2
+                        className="text-white mix-blend-difference text-[30px] lg:text-[50px]"
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        <div className="overflow-hidden h-16">
+                            <motion.span
+                                variants={item}
+                                className="inline-block"
+                            >
+                                Creating unique brands is
+                            </motion.span>
+                        </div>
+                        <div className="overflow-hidden h-16">
+                            <motion.span
+                                variants={item}
+                                className="inline-block"
+                            >
+                                what we do.
+                            </motion.span>
+                        </div>
+                    </motion.h2>
 
                     <div className="flex items-center gap-x-4 text-2xl font-semibold pt-6 lg:text-3xl">
                         More about us{" "}
