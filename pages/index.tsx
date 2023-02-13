@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Link from "next/link";
 import Cases from "@/components/Cases";
+import Loader from "@/components/Loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,8 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="h-[50vh]">
+            <div className="h-[50vh] relative">
+                <Loader />
                 <Header />
 
                 <section className="bg-white w-[90%] mx-auto 2xl:w-[1280px]">

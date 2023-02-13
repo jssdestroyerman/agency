@@ -37,7 +37,7 @@ function Cases() {
                         fill
                         alt={product.title}
                     />
-                    <div className="absolute bottom-20 left-6 z-10">
+                    <div className="absolute bottom-20 left-6">
                         <h3 className="text-gray-300 text-2xl">
                             {product.title}
                         </h3>
