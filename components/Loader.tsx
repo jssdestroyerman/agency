@@ -2,14 +2,16 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const container = {
+    hidden: { rotate: 180 },
     show: { transition: { staggerChildren: 0.3, delayChildren: 2 } },
 };
 
 const item = {
-    show: { y: "100%", transition: { duration: 1 } },
+    show: { height: 0, transition: { duration: 1 } },
 };
 
 const container2 = {
+    hidden: { rotate: 180 },
     show: { transition: { staggerChildren: 1, delayChildren: 3 } },
 };
 
@@ -23,7 +25,7 @@ function Loader() {
     return (
         <div className={`absolute flex flex-col ${!animation && "hidden"}`}>
             <motion.div
-                className="h-[50vh] flex "
+                className="h-[50vh] flex flex-row-reverse "
                 variants={container}
                 initial="hidden"
                 animate="show"
@@ -43,7 +45,7 @@ function Loader() {
             </motion.div>
 
             <motion.div
-                className="h-[50vh] flex z-20 flex-row-reverse"
+                className="h-[50vh] flex z-20 "
                 variants={container2}
                 initial="hidden"
                 animate="show"
