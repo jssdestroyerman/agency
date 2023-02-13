@@ -12,11 +12,11 @@ const item = {
 
 const container2 = {
     hidden: { rotate: 180 },
-    show: { transition: { staggerChildren: 1, delayChildren: 3 } },
+    show: { transition: { staggerChildren: 0.5, delayChildren: 3 } },
 };
 
 const item2 = {
-    show: { width: 0, transition: { duration: 1 } },
+    show: { width: 0, transition: { duration: 0.75 } },
 };
 
 function Loader() {
@@ -45,24 +45,30 @@ function Loader() {
             </motion.div>
 
             <motion.div
-                className="h-[50vh] flex z-20 "
+                className="h-[50vh] flex z-20 flex-row-reverse"
                 variants={container2}
                 initial="hidden"
                 animate="show"
                 onAnimationComplete={() => setAnimation(false)}
             >
-                <motion.div
-                    className="bg-black h-full w-[100vw]  md:w-[33.333vw] "
-                    variants={item2}
-                />
-                <motion.div
-                    className="md:bg-black md:h-full md:w-[33.333vw]"
-                    variants={item2}
-                />
-                <motion.div
-                    className="md:bg-black md:h-full md:w-[33.333vw]"
-                    variants={item2}
-                />
+                <div className="h-full w-[100vw] md:w-[33.333vw] ">
+                    <motion.div
+                        className="bg-black h-full w-full"
+                        variants={item2}
+                    />
+                </div>
+                <div className="h-full md:w-[33.333vw]">
+                    <motion.div
+                        className="bg-black h-full w-full"
+                        variants={item2}
+                    />
+                </div>
+                <div className="h-ful md:w-[33.333vw] ">
+                    <motion.div
+                        className="bg-black h-full w-full"
+                        variants={item2}
+                    />
+                </div>
             </motion.div>
         </div>
     );
