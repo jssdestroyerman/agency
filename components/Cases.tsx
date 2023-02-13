@@ -29,11 +29,11 @@ function Cases() {
                 <Link
                     href={""}
                     key={product.id}
-                    className="min-h-full w-full relative bg-black"
+                    className="min-h-full w-full relative bg-black group"
                 >
                     <Image
                         src={`/${product.image}`}
-                        className="object-cover opacity-75 hover:opacity-50 transition duration-500"
+                        className="object-cover opacity-75 group-hover:opacity-50 transition duration-500"
                         fill
                         alt={product.title}
                     />
