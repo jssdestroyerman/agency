@@ -10,8 +10,12 @@ const container = {
 };
 
 const item = {
-    hidden: { y: 100 },
-    show: { y: 0, transition: { duration: 0.7 } },
+    hidden: { y: 100, rotate: 17 },
+    show: {
+        y: 0,
+        rotate: 0,
+        transition: { duration: 0.7 },
+    },
 };
 
 export default function Home() {
