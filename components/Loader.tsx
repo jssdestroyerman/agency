@@ -3,7 +3,13 @@ import { useState } from "react";
 
 const container = {
     hidden: { rotate: 180 },
-    show: { transition: { staggerChildren: 0.3, delayChildren: 2 } },
+    show: {
+        transition: {
+            staggerChildren: 0.3,
+            delayChildren: 2,
+            staggerDirection: -1,
+        },
+    },
 };
 
 const item = {
@@ -12,7 +18,13 @@ const item = {
 
 const container2 = {
     hidden: { rotate: 180 },
-    show: { transition: { staggerChildren: 0.5, delayChildren: 3 } },
+    show: {
+        transition: {
+            staggerChildren: 0.5,
+            delayChildren: 3,
+            staggerDirection: -1,
+        },
+    },
 };
 
 const item2 = {
@@ -25,7 +37,7 @@ function Loader() {
     return (
         <div className={`absolute flex flex-col ${!animation && "hidden"}`}>
             <motion.div
-                className="h-[50vh] flex flex-row-reverse "
+                className="h-[50vh] flex"
                 variants={container}
                 initial="hidden"
                 animate="show"
@@ -45,7 +57,7 @@ function Loader() {
             </motion.div>
 
             <motion.div
-                className="h-[50vh] flex z-20 flex-row-reverse"
+                className="h-[50vh] flex z-20"
                 variants={container2}
                 initial="hidden"
                 animate="show"
