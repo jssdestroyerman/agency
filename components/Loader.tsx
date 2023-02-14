@@ -20,7 +20,7 @@ const container2 = {
     hidden: { rotate: 180 },
     show: {
         transition: {
-            staggerChildren: 0.5,
+            staggerChildren: 0.2,
             delayChildren: 3,
             staggerDirection: -1,
         },
