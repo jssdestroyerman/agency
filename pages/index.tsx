@@ -55,7 +55,7 @@ export default function Home() {
                     </div>
                 </motion.h2>
 
-                <div className="flex items-center gap-x-4 text-2xl font-semibold pt-6 lg:text-3xl">
+                <div className="flex items-center gap-x-4 text-2xl font-semibold pt-6 lg:text-3xl pb-2">
                     More about us{" "}
                     <Link
                         href={""}
