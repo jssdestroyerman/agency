@@ -32,50 +32,54 @@ const item2 = {
 };
 
 function Loader() {
-    const [animation, setAnimation] = useState(true);
+    const [animation, setAnimation] = useState(false);
 
     return (
-        <div className={`absolute flex flex-col ${!animation && "hidden"}`}>
+        <div
+            className={`h-full w-full absolute flex flex-col ${
+                animation && "hidden"
+            }`}
+        >
             <motion.div
-                className="h-[50vh] flex"
+                className="min-h-[50%] w-full flex"
                 variants={container}
                 initial="hidden"
                 animate="show"
             >
                 <motion.div
-                    className="bg-black h-full w-[100vw] md:w-[33.333vw]"
+                    className="bg-black h-full w-full md:w-1/3"
                     variants={item}
                 />
                 <motion.div
-                    className="md:bg-black md:h-full md:w-[33.333vw]"
+                    className="md:bg-black md:h-full md:w-1/3"
                     variants={item}
                 />
                 <motion.div
-                    className="md:bg-black md:h-full md:w-[33.333vw]"
+                    className="md:bg-black md:h-full md:w-1/3"
                     variants={item}
                 />
             </motion.div>
 
             <motion.div
-                className="md:h-[50vh] h-[150vh] flex flex-col md:flex-row z-20"
+                className="md:h-1/2 min-h-[150vh] w-full flex flex-col md:flex-row z-20"
                 variants={container2}
                 initial="hidden"
                 animate="show"
                 onAnimationComplete={() => setAnimation(false)}
             >
-                <div className="h-full w-[100vw] md:w-[33.333vw] ">
+                <div className="h-full md:w-1/3 ">
                     <motion.div
                         className="bg-black h-full w-full"
                         variants={item2}
                     />
                 </div>
-                <div className="h-full w-[100vw] md:w-[33.333vw]">
+                <div className="h-full w-full md:w-1/3">
                     <motion.div
                         className="bg-black h-full w-full"
                         variants={item2}
                     />
                 </div>
-                <div className="h-full w-[100vw] md:w-[33.333vw] ">
+                <div className="h-full w-full md:w-1/3 ">
                     <motion.div
                         className="bg-black h-full w-full"
                         variants={item2}
