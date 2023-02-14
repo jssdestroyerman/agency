@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <div className="h-[50vh] flex  flex-col md:flex-row">
+            <div className="h-1/2 flex flex-col md:flex-row">
                 <Cases />
             </div>
         </div>
