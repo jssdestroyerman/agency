@@ -41,7 +41,7 @@ function Loader() {
             }`}
         >
             <motion.div
-                className="min-h-[50%] w-full flex"
+                className="h-1/2 w-full flex"
                 variants={container}
                 initial="hidden"
                 animate="show"
