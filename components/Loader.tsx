@@ -61,13 +61,13 @@ function Loader() {
             </motion.div>
 
             <motion.div
-                className="md:h-1/2 min-h-[150vh] w-full flex flex-col md:flex-row z-20"
+                className="h-1/2 w-full flex flex-col md:flex-row z-20"
                 variants={container2}
                 initial="hidden"
                 animate="show"
                 onAnimationComplete={() => setAnimation(false)}
             >
-                <div className="h-full md:w-1/3 ">
+                <div className="md:h-full md:w-1/3 h-0 ">
                     <motion.div
                         className="bg-black h-full w-full"
                         variants={item2}
@@ -79,7 +79,7 @@ function Loader() {
                         variants={item2}
                     />
                 </div>
-                <div className="h-full w-full md:w-1/3 ">
+                <div className="md:h-full md:w-1/3 h-0 ">
                     <motion.div
                         className="bg-black h-full w-full"
                         variants={item2}
