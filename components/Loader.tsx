@@ -32,12 +32,12 @@ const item2 = {
 };
 
 function Loader() {
-    const [animation, setAnimation] = useState(false);
+    const [animation, setAnimation] = useState(true);
 
     return (
         <div
             className={`h-full w-full absolute flex flex-col ${
-                animation && "hidden"
+                !animation && "hidden"
             }`}
         >
             <motion.div
